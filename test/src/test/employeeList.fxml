@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="46.0" prefWidth="164.0" stylesheets="@dropListStyling.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.EmployeeListController">
+   <children>
+      <Label fx:id="employeeRegistrationLabelID" onMouseClicked="#addEmployeeRegistrationToCenter" prefHeight="26.0" prefWidth="164.0" styleClass="mouseOver" text="Employee Registration" textFill="WHITE" />
+      <Separator prefWidth="200.0" />
+      <Label fx:id="employeeSalaryLabelID" onMouseClicked="#addEmployeeSalaryToCenter" prefHeight="25.0" prefWidth="164.0" styleClass="mouseOver" text="Employee Salary " textFill="WHITE" />
+   </children>
+</VBox>

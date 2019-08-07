@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="jasper_report_template" language="groovy" pageWidth="650" pageHeight="400" columnWidth="610" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7fcac69-3d3a-41a3-a016-85392ce91187">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="customerName" class="java.lang.String">
+		<fieldDescription><![CDATA[customerName]]></fieldDescription>
+	</field>
+	<field name="customerAccountNo" class="java.lang.String">
+		<fieldDescription><![CDATA[customerAccountNo]]></fieldDescription>
+	</field>
+	<field name="totalWeight" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalWeight]]></fieldDescription>
+	</field>
+	<field name="ratePerKG" class="java.lang.Double">
+		<fieldDescription><![CDATA[ratePerKG]]></fieldDescription>
+	</field>
+	<field name="totalAmount" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalAmount]]></fieldDescription>
+	</field>
+	<field name="totalChicken" class="java.lang.Integer">
+		<fieldDescription><![CDATA[totalChicken]]></fieldDescription>
+	</field>
+	<title>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="163" y="0" width="279" height="33" uuid="ed138702-74b7-437e-9903-127aa94fc395"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Batang" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ABC Poultry Farm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="34" width="194" height="22" uuid="d8d54a72-b903-4035-9676-26221ac6e905"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Batang" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Sale Slip]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="281" splitType="Stretch">
+			<componentElement>
+				<reportElement x="200" y="231" width="155" height="50" uuid="14aabcb8-899e-40dd-bacf-4bb975bc233e"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="3of9" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA["1234"]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<line>
+				<reportElement x="0" y="32" width="610" height="1" uuid="873c22f5-987e-4b27-8d41-2864a79b2df7"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="217" width="610" height="1" uuid="8caeacd4-300a-4eac-8913-27aac953cc59"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="410" y="241" width="187" height="20" uuid="c1600aed-db33-4788-b2a1-78973d896f7d"/>
+				<text><![CDATA[Thank you  for  shopping with us !]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="45" width="100" height="20" uuid="70ae1254-76a2-4271-9eb1-b17d8d156874"/>
+				<text><![CDATA[Customer Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="99" width="111" height="20" uuid="d20ab661-b1c1-4a86-ba9a-2115f8974891"/>
+				<text><![CDATA[Customer Account No :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="161" width="100" height="20" uuid="4619941b-ee7e-48ab-994f-c5b6d2724da2"/>
+				<text><![CDATA[Total Weight :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="45" width="100" height="20" uuid="84fe40e3-788e-4c95-bc30-036dd3ce50e7"/>
+				<text><![CDATA[Rate /KG :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="99" width="100" height="20" uuid="fe6b7256-cf81-47a0-8dda-868833530c6a"/>
+				<text><![CDATA[Total Amount :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="161" width="100" height="20" uuid="9a54043c-2c06-4c37-8a9f-a0a13ea4146c"/>
+				<text><![CDATA[Total Chickens :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="175" y="45" width="100" height="20" uuid="22c1c710-ed94-41db-8b79-e2ea7a2f27e1"/>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="99" width="124" height="20" uuid="902e4af0-f3e5-4108-b7a4-8a82183ca577"/>
+				<textFieldExpression><![CDATA[$F{customerAccountNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="161" width="100" height="20" uuid="aef4be4e-757d-4f9d-a492-6a923c266a26"/>
+				<textFieldExpression><![CDATA[$F{totalWeight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="510" y="45" width="100" height="20" uuid="bd0934b7-c1a8-496c-bc06-884edebbd10b"/>
+				<textFieldExpression><![CDATA[$F{ratePerKG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="510" y="99" width="100" height="20" uuid="9119e4ec-f5f3-401e-ab8e-13fd38ce990f"/>
+				<textFieldExpression><![CDATA[$F{totalAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="510" y="161" width="100" height="20" uuid="e15fc613-5028-4585-9289-5941bf5e3f26"/>
+				<textFieldExpression><![CDATA[$F{totalChicken}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="6" y="12" width="100" height="20" uuid="ef5534b0-c2c3-425b-92cd-c3045ef5d4b3"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

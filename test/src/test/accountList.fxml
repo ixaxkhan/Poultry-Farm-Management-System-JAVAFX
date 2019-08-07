@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="30.0" prefWidth="164.0" stylesheets="@dropListStyling.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.AccountListController">
+   <children>
+      <Label fx:id="companyAccountLabelID" onMouseClicked="#addCompanyAccountToCenter" prefHeight="26.0" prefWidth="164.0" style="-fx-fill: white;" styleClass="mouseOver" text=" Compay Account" textFill="#f2ebeb" />
+      <Separator prefWidth="200.0" />
+      <Label fx:id="customerAccountLabelID" onMouseClicked="#addCustomerAccountToCenter" prefHeight="26.0" prefWidth="164.0" styleClass="mouseOver" text="Customer Account" textFill="#f2ebeb" />
+   </children>
+</VBox>

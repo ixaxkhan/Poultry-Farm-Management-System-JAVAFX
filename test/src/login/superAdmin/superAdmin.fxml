@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.superAdmin.SuperController">
+   <top>
+      <Pane prefHeight="38.0" prefWidth="591.0" style="-fx-background-color: #ac3939; -fx-border-radius: 15; -fx-border-color: red;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="468.0" opacity="0.88" prefHeight="39.0" prefWidth="488.0" style="-fx-background-color: white; -fx-border-color: red;">
+               <children>
+                  <Button layoutX="447.0" layoutY="3.0" mnemonicParsing="false" onAction="#windowClosed" prefHeight="33.0" prefWidth="41.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../image/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></Pane>
+            <Text layoutX="71.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Super Admin" wrappingWidth="283.13671875">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <Pane prefHeight="310.0" prefWidth="94.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton ellipsisString="" layoutY="226.0" onAction="#gotoHomeWindow" prefHeight="59.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" styleClass="welcomePane">
+                     <image>
+                        <Image url="@../../image/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+   </left>
+   <bottom>
+      <Pane prefHeight="7.0" prefWidth="663.0" style="-fx-background-color: #ac3939;" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <TabPane prefHeight="310.0" prefWidth="505.0" style="-fx-border-color: red;" styleClass="tabpane" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab id="mouse" style="-fx-font-size: 16; -fx-background-color: #ac3939; -fx-fill: red; -fx-border-radius: 15; -fx-color: red;" text="New Admin">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="277.0" prefWidth="630.0" style="-fx-border-color: red;">
+                     <children>
+                        <TextField fx:id="txfSearch" layoutX="566.0" layoutY="288.0" onKeyReleased="#searchDataInTable" prefHeight="25.0" prefWidth="197.0" promptText="search " />
+                        <Pane layoutX="14.0" layoutY="52.0" prefHeight="216.0" prefWidth="229.0" style="-fx-border-color: #1aa3ff;">
+                           <children>
+                              <JFXTextField fx:id="txfName" layoutX="47.0" layoutY="32.0" promptText="Name" />
+                              <JFXTextField fx:id="txfPhone" layoutX="47.0" layoutY="136.0" promptText="03059579307" />
+                              <JFXTextField fx:id="txfEmail" layoutX="47.0" layoutY="83.0" promptText="ak9145993@gmail.com" />
+                              <JFXTextField fx:id="txfID" layoutX="47.0" layoutY="14.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="267.0" layoutY="52.0" prefHeight="216.0" prefWidth="229.0" style="-fx-border-color: #1aa3ff;">
+                           <children>
+                              <JFXTextField fx:id="txfUserName" layoutX="47.0" layoutY="56.0" promptText="UserName" />
+                              <JFXPasswordField fx:id="txfPassword" layoutX="47.0" layoutY="123.0" promptText="Password" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="566.0" layoutY="52.0" prefHeight="215.0" prefWidth="103.0" style="-fx-border-color: #1aa3ff;">
+                           <children>
+                              <VBox layoutX="1.0" layoutY="1.0">
+                                 <children>
+                                    <JFXButton onAction="#btnSaveToTable" prefHeight="38.0" prefWidth="101.0" text="save">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../image/icons8-save-close-48.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets bottom="18.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <JFXButton layoutX="10.0" layoutY="10.0" onAction="#btnUpdateToTable" prefHeight="38.0" prefWidth="101.0" text="update">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../image/icons8-update-48.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets bottom="18.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <JFXButton layoutX="10.0" layoutY="48.0" onAction="#btnDeleteToTable" prefHeight="38.0" prefWidth="101.0" text="delete">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../image/icons8-delete-file-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets bottom="18.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <JFXButton layoutX="10.0" layoutY="86.0" onAction="#btnClearToTable" prefHeight="38.0" prefWidth="101.0" text="clear">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../image/icons8-clear-symbol-48.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets bottom="18.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <TableView fx:id="tableView" layoutX="2.0" layoutY="314.0" onMouseClicked="#loadDataIntoFields" prefHeight="232.0" prefWidth="762.0" stylesheets="@tableStyle.css">
+                          <columns>
+                            <TableColumn fx:id="tbID" minWidth="50.0" prefWidth="107.0" text="ID" />
+                            <TableColumn fx:id="tbname" minWidth="33.0" prefWidth="118.0" text="Name" />
+                              <TableColumn fx:id="tbuserName" minWidth="14.0" prefWidth="122.0" text="UserName" />
+                              <TableColumn fx:id="tbpassword" minWidth="3.0" prefWidth="131.0" text="Password" />
+                              <TableColumn fx:id="tbemail" minWidth="0.0" prefWidth="121.0" text="Email" />
+                              <TableColumn fx:id="tbphone" minWidth="0.0" prefWidth="162.0" text="Phone" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <right>
+      <Pane prefHeight="538.0" prefWidth="96.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton ellipsisString="" layoutX="11.0" layoutY="230.0" onAction="#gotoLoginWindow" prefHeight="59.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" styleClass="welcomePane">
+                     <image>
+                        <Image url="@../../image/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+   </right>
+</BorderPane>

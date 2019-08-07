@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employee.add.EmployeeAddController">
+   <children>
+      <BorderPane layoutX="7.0" prefHeight="608.0" prefWidth="1043.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="44.0" prefWidth="1020.0" style="-fx-background-color: #254d74;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="8.0" prefWidth="1037.0" style="-fx-background-color: white;" />
+                  <Label layoutX="435.0" layoutY="14.0" prefHeight="17.0" prefWidth="191.0" text="Employee Registration" textFill="#f2eeee">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="561.0" prefWidth="1028.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="39.0" layoutY="28.0" prefHeight="276.0" prefWidth="704.0" style="-fx-border-color: red;">
+                     <children>
+                        <JFXTextField fx:id="txfEmp_Name" labelFloat="true" layoutX="46.0" layoutY="27.0" prefHeight="25.0" prefWidth="200.0" promptText="Employee Name" />
+                        <JFXTextField fx:id="txfEmp_Designation" labelFloat="true" layoutX="47.0" layoutY="83.0" prefHeight="25.0" prefWidth="200.0" promptText="Designation" />
+                        <JFXTextField fx:id="txfEmp_Salary" labelFloat="true" layoutX="46.0" layoutY="145.0" prefHeight="25.0" prefWidth="200.0" promptText="Salary" />
+                        <TextArea fx:id="txfEmp_Address" layoutX="329.0" layoutY="145.0" prefHeight="114.0" prefWidth="284.0" promptText="Address" />
+                        <JFXTextField fx:id="txfEmp_Phone" labelFloat="true" layoutX="46.0" layoutY="207.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" />
+                        <JFXTextField fx:id="txfEmp_CNIC" labelFloat="true" layoutX="329.0" layoutY="27.0" prefHeight="25.0" prefWidth="200.0" promptText="CNIC Number" />
+                        <JFXDatePicker fx:id="txfEmp_Hiring_Date" layoutX="329.0" layoutY="82.0" prefHeight="28.0" prefWidth="200.0" promptText="Hiring Date" />
+                        <JFXTextField fx:id="txfEmp_ID" layoutX="546.0" layoutY="40.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="867.0" layoutY="35.0" prefHeight="226.0" prefWidth="103.0" style="-fx-border-color: red;">
+                     <children>
+                        <VBox layoutX="1.0" layoutY="1.0">
+                           <children>
+                              <JFXButton onAction="#saveDataIntoTable" prefHeight="38.0" prefWidth="101.0" text="save">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-save-close-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="10.0" layoutY="10.0" onAction="#updateDataIntoTable" prefHeight="38.0" prefWidth="101.0" text="update">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-update-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="10.0" layoutY="48.0" onAction="#deleteDataFromTable" prefHeight="38.0" prefWidth="101.0" text="delete">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-delete-file-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="10.0" layoutY="86.0" onAction="#clearFields" prefHeight="38.0" prefWidth="101.0" text="clear">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-clear-symbol-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="emp_Table" layoutX="1.0" layoutY="327.0" onMouseClicked="#loadDataIntoFields" prefHeight="237.0" prefWidth="1024.0">
+                    <columns>
+                      <TableColumn fx:id="tbEmp_ID" prefWidth="108.0" text="Emp_ID" />
+                      <TableColumn fx:id="tbEmp_Name" minWidth="7.0" prefWidth="139.0" text="Employee Name" />
+                        <TableColumn fx:id="tbEmp_Designation" prefWidth="148.0" text="Employee Designation" />
+                        <TableColumn fx:id="tbEmp_Salary" prefWidth="124.0" text="Employee Salary" />
+                        <TableColumn fx:id="tbEmp_Phone" prefWidth="129.0" text="Employee Phone" />
+                        <TableColumn fx:id="tbEmp_hiring_Date" prefWidth="139.0" text="Employee Hiring Date" />
+                        <TableColumn fx:id="tbEmp_Address" prefWidth="132.0" text="Employee Address" />
+                        <TableColumn fx:id="tbEmp_CNIC" prefWidth="104.0" text="Emp_CNIC" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="26.0" prefWidth="164.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.CustomerListController">
+   <children>
+      <Label fx:id="customerAddLabelID" onMouseClicked="#addCustomerAccountToCenter" prefHeight="26.0" prefWidth="164.0" styleClass="mouseOver" stylesheets="@dropListStyling.css" text=" Add Customer" textFill="#eee8e8" />
+     
+   </children>
+</VBox>

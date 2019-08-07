@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="46.0" prefWidth="164.0" stylesheets="@dropListStyling.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.CheckenListController">
+   <children>
+      <Label fx:id="saleLabelID" onMouseClicked="#addChickenSaleToCenter" prefHeight="26.0" prefWidth="164.0" styleClass="mouseOver" text="Checken Sale" textFill="WHITE" />
+      <Separator prefWidth="200.0" />
+      <Label fx:id="purchaseLabelID" onMouseClicked="#addChickenPurchaseToCenter" prefHeight="25.0" prefWidth="164.0" styleClass="mouseOver" text="Checken Purchase" textFill="WHITE" />
+      <Separator layoutX="10.0" layoutY="32.0" prefWidth="200.0" />
+      <Label fx:id="motilityLabelID" layoutX="10.0" layoutY="34.0" onMouseClicked="#addChickenMotilityToCenter" prefHeight="25.0" prefWidth="164.0" styleClass="mouseOver" text="Checken Motility" textFill="WHITE" />
+      <Separator layoutX="10.0" layoutY="48.0" prefWidth="200.0" />
+   </children>
+</VBox>

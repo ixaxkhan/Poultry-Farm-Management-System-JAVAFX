@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="saleRecord" language="groovy" pageWidth="880" pageHeight="595" orientation="Landscape" columnWidth="840" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1fb3f5b1-cf79-41c7-a401-942be22b9e72">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM BIRD_SALE, CUSTOMER,PURCHASE_BIRD_BATCH, CUSTOMER_ACCOUNT WHERE BIRD_SALE.ACCOUNT_ID=CUSTOMER_ACCOUNT.ACCOUNT_NO AND BIRD_SALE.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID AND BIRD_SALE.PURCHASE_ID=PURCHASE_BIRD_BATCH.BATCH_PRIMARY_ID
+        
+]]>
+	</queryString>
+	<field name="SALE_ID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL_QUANTITY" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL_AMOUNT" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL_BIRDS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RATE_PER_KG" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="STOCK_ID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ACCOUNT_ID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUSTOMER_ID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BATCH_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL_NUMBER_BIRDS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHONE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CINC" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="INITIAL_BALANCE" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="OPEN_ACCOUNT_DATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CURRENT_BALANCE" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ACCOUNT_NO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="241" y="0" width="334" height="31" uuid="48320b75-f86b-4fd8-b888-7bde89494bee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Batang" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ABC Poultry Farm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="31" width="149" height="20" uuid="36d3bc5f-2410-4b03-82fd-fd9bdcb3d024"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Batang" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sale Record]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd-MMM-yyyy">
+				<reportElement x="100" y="15" width="100" height="20" uuid="5abdbdc7-3754-47cd-a98b-c908f026da53"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="82" height="20" uuid="6b1cf88d-711c-4f5e-8f6b-98744dd78558"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="09990b5d-6ca6-448f-8aba-b6ba4c6b314f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CUSTOMER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="41" width="100" height="20" uuid="3f7faaa3-c957-422b-9356-29596f092c71"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CUSTOMER CNIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="41" width="115" height="20" uuid="469eee75-186e-44f9-94e1-2c279653ae80"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TOTAL WEIGHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="41" width="100" height="20" uuid="5a639ac4-1136-4099-9919-907a5b61af23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RATE PER KG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="41" width="116" height="20" uuid="7fe10695-ff1c-4f2b-b69d-c3268bfe33a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TOTAL AMOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="531" y="41" width="100" height="20" uuid="c8c2217b-77a9-4f77-b722-7053103e2ec9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[BATCH_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="631" y="41" width="100" height="20" uuid="ddf4546b-c351-4031-aca5-2de107d22e6a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ACCOUNT_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="731" y="41" width="100" height="20" uuid="224539ae-9cab-4992-ae46-144883275d25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="11fbc632-169f-44bc-94a2-058243d12536"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="e7ea251d-4022-4774-a51a-3f6247d244d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CINC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="115" height="20" uuid="c59d2e53-252c-4fa7-ae38-868bc85970a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TOTAL_QUANTITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="0" width="100" height="20" uuid="34f647e5-1a33-4fc3-b6a2-a7b00b115173"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{RATE_PER_KG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="0" width="116" height="20" uuid="c1005183-5a72-4586-95cb-565eefaa08c6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TOTAL_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="531" y="0" width="100" height="20" uuid="fb64f8e2-2630-409b-bd98-e40b9acf50f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{BATCH_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="631" y="0" width="100" height="20" uuid="03adca5b-260b-45f8-a6fc-61ab9ac16f15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ACCOUNT_ID}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="731" y="0" width="100" height="20" uuid="d0c861b1-dedb-4de2-bc55-5656503531fb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

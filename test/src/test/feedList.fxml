@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="46.0" prefWidth="164.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FeedListController">
+   <children>
+      <Label fx:id="purchaseLabelID" onMouseClicked="#addPurchaseFeedToCenter" prefHeight="26.0" prefWidth="164.0" styleClass="mouseOver" stylesheets="@dropListStyling.css" text="Feed Purchase" textFill="#ebe5e5" />
+      <Separator prefWidth="200.0" />
+      <Label fx:id="consumeLabelID" onMouseClicked="#addConsumeFeedToCenter" prefHeight="26.0" prefWidth="164.0" styleClass="mouseOver" stylesheets="@dropListStyling.css" text="Feed Consume" textFill="#ebe5e5" />
+   </children>
+</VBox>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chickens.chickenMotility.ChickenMotilityController">
+   <children>
+      <BorderPane layoutX="7.0" prefHeight="608.0" prefWidth="1043.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="44.0" prefWidth="1020.0" style="-fx-background-color: #254d74;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="8.0" prefWidth="1037.0" style="-fx-background-color: white;" />
+                  <Label layoutX="435.0" layoutY="14.0" prefHeight="17.0" prefWidth="191.0" text="Chicken Motility Data Entry" textFill="#f2eeee">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="594.0" prefWidth="10.0" BorderPane.alignment="CENTER" />
+         </left>
+         <bottom>
+            <AnchorPane prefHeight="561.0" prefWidth="1028.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="81.0" layoutY="20.0" prefHeight="282.0" prefWidth="687.0" style="-fx-border-color: red;">
+                     <children>
+                        <JFXDatePicker fx:id="txfDate" layoutX="57.0" layoutY="35.0" prefHeight="28.0" prefWidth="224.0" promptText="select Date" />
+                        <JFXTextField fx:id="txfChickens" labelFloat="true" layoutX="57.0" layoutY="110.0" prefWidth="190.0" promptText="Total Number Chicken" />
+                        <JFXTextField fx:id="txfBatchNo" labelFloat="true" layoutX="57.0" layoutY="197.0" prefWidth="190.0" promptText="Chicken Batch Number" />
+                        <TextArea fx:id="txfRemarks" layoutX="432.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" promptText="Remark" />
+                        <JFXTextField fx:id="motilityPrimary" layoutX="276.0" layoutY="14.0" />
+                        <JFXTextField fx:id="batchNoPrimary" layoutX="66.0" layoutY="14.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="867.0" layoutY="35.0" prefHeight="226.0" prefWidth="103.0" style="-fx-border-color: red;">
+                     <children>
+                        <VBox layoutX="1.0" layoutY="1.0">
+                           <children>
+                              <JFXButton fx:id="savebtn" onAction="#saveDataIntoTable" prefHeight="30.0" prefWidth="101.0" text="save">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-save-close-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="updatebtn" layoutX="10.0" layoutY="10.0" onAction="#updateDataIntoTable" prefHeight="30.0" prefWidth="101.0" text="update">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-update-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="deletebtn" layoutX="10.0" layoutY="48.0" onAction="#deleteDataIntoTable" prefHeight="30.0" prefWidth="101.0" text="delete">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-delete-file-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="clearbtn" layoutX="10.0" layoutY="86.0" onAction="#clearFields" prefHeight="30.0" prefWidth="101.0" text="clear">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-clear-symbol-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="printbtn" layoutX="10.0" layoutY="154.0" onAction="#printSlip" prefHeight="30.0" prefWidth="101.0" text="print">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/print.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="motalityTable" layoutX="-7.0" layoutY="336.0" onMouseClicked="#loadeDataIntoField" prefHeight="227.0" prefWidth="1043.0">
+                    <columns>
+                      <TableColumn fx:id="tbBatchNo" minWidth="0.0" prefWidth="232.0" text="Batch Number" />
+                        <TableColumn fx:id="tbChickens" prefWidth="278.0" text="Total  Chickens" />
+                        <TableColumn fx:id="tbRemarks" prefWidth="295.0" text="Remarks" />
+                        <TableColumn fx:id="tbDate" prefWidth="237.0" text="Date" />
+                        <TableColumn fx:id="tbMotilityPrimary" prefWidth="223.0" text="motilityPrimary" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="483.0" layoutY="312.0" onMouseClicked="#printRecord" prefHeight="17.0" prefWidth="39.0" text="Print" textFill="#4606e8" underline="true" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

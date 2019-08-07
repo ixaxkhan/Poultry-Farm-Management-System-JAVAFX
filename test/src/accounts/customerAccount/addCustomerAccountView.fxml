@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accounts.customerAccount.AddCustomerAccountController">
+   <children>
+      <BorderPane layoutX="7.0" prefHeight="608.0" prefWidth="1043.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="44.0" prefWidth="987.0" style="-fx-background-color: #254d74;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="8.0" prefWidth="1037.0" style="-fx-background-color: white;" />
+                  <Label layoutX="415.0" layoutY="12.0" prefHeight="21.0" prefWidth="213.0" text="Customer Account Registration" textFill="#f2eeee">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="594.0" prefWidth="10.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <AnchorPane prefHeight="561.0" prefWidth="1028.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="73.0" layoutY="20.0" prefHeight="279.0" prefWidth="681.0" style="-fx-border-color: red;">
+                     <children>
+                        <JFXDatePicker fx:id="txfOpeningDate" layoutX="385.0" layoutY="43.0" prefHeight="28.0" prefWidth="224.0" promptText="Opening Date" />
+                        <JFXTextField fx:id="txfAccountNumber" labelFloat="true" layoutX="57.0" layoutY="43.0" prefHeight="25.0" prefWidth="190.0" promptText="Account Number" />
+                        <JFXTextField fx:id="txfOpeningBalance" labelFloat="true" layoutX="57.0" layoutY="100.0" onKeyReleased="#fillIntoCurrentBalance" prefWidth="190.0" promptText="Opening Balance" />
+                        <JFXTextField fx:id="txfCurrentBalance" labelFloat="true" layoutX="57.0" layoutY="165.0" prefWidth="190.0" promptText="Current Balance" />
+                        <JFXTextField fx:id="txfCustomerCNIC" labelFloat="true" layoutX="385.0" layoutY="100.0" prefWidth="190.0" promptText="Customer CNIC" />
+                        <JFXTextField fx:id="txfID" layoutX="362.0" layoutY="178.0" />
+                        <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="240.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="240.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="240.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="561.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="568.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="867.0" layoutY="35.0" prefHeight="226.0" prefWidth="103.0" style="-fx-border-color: red;">
+                     <children>
+                        <VBox layoutX="1.0" layoutY="1.0">
+                           <children>
+                              <JFXButton fx:id="savebtn" onAction="#saveDataIntoTable" prefHeight="30.0" prefWidth="101.0" text="save">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-save-close-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="updatebtn" layoutX="10.0" layoutY="10.0" onAction="#updateDataIntoTable" prefHeight="30.0" prefWidth="101.0" text="update">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-update-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="deletebtn" layoutX="10.0" layoutY="48.0" onAction="#deleteDataFromTable" prefHeight="30.0" prefWidth="101.0" text="delete">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-delete-file-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="clearbtn" layoutX="10.0" layoutY="86.0" onAction="#clearFieds" prefHeight="30.0" prefWidth="101.0" text="clear">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-clear-symbol-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="printbtn" layoutX="10.0" layoutY="154.0" onAction="#printSlip" prefHeight="30.0" prefWidth="101.0" text="Print">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/print.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="customerAccountTable" layoutX="-19.0" layoutY="327.0" onMouseClicked="#loadDataIntoFields" prefHeight="238.0" prefWidth="1043.0" style="-fx-table-cell-border-color: transparent;">
+                    <columns>
+                        <TableColumn fx:id="tbID" minWidth="0.0" prefWidth="0.0" text="ID" />
+                        <TableColumn fx:id="tbCustomerName" prefWidth="141.0" text="Customer Name" />
+                        <TableColumn fx:id="tbCustomerCNIC" prefWidth="122.0" text="Customer CNIC " />
+                        <TableColumn fx:id="tbCustomerAddress" prefWidth="136.0" text="Customer Address" />
+                        <TableColumn fx:id="tbCustomerPhone" minWidth="0.0" prefWidth="148.0" text="Customer Phone" />
+                      <TableColumn fx:id="tbAccountNumber" prefWidth="112.00003051757812" text=" Account Number" />
+                      <TableColumn fx:id="tbOpeningBalance" minWidth="7.0" prefWidth="114.0" text="Opening Balance" />
+                        <TableColumn fx:id="tbCurrentBalance" minWidth="4.0" prefWidth="114.0" text="Current Balance" />
+                        <TableColumn fx:id="tbOpeningDate" prefWidth="155.0" text="Opening Date" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="456.0" layoutY="304.0" onMouseClicked="#printCustomerAccountRecord" prefHeight="17.0" prefWidth="30.0" text="Print" textFill="#2d06da" underline="true" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

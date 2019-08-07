@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chickens.Sale.CheckenSaleController">
+   <children>
+      <BorderPane layoutX="7.0" prefHeight="608.0" prefWidth="1043.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="44.0" prefWidth="1027.0" style="-fx-background-color: #254d74;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="8.0" prefWidth="1037.0" style="-fx-background-color: white;" />
+                  <Label layoutX="435.0" layoutY="14.0" prefHeight="17.0" prefWidth="191.0" text="Chicken Sale Data Entry" textFill="#f2eeee">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="564.0" prefWidth="1007.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="867.0" layoutY="35.0" prefHeight="226.0" prefWidth="103.0" style="-fx-border-color: #1aa3ff;">
+                     <children>
+                        <VBox layoutX="1.0" layoutY="1.0" prefHeight="225.0" prefWidth="101.0">
+                           <children>
+                              <JFXButton fx:id="savebtn" onAction="#saveDateIntoTable" prefHeight="30.0" prefWidth="101.0" text="save">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-save-close-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="updatebtn" layoutX="10.0" layoutY="10.0" onAction="#updateDateIntoTable" prefHeight="30.0" prefWidth="101.0" text="update">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-update-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="deletebtn" layoutX="10.0" layoutY="48.0" onAction="#delereDateIntoTable" prefHeight="30.0" prefWidth="101.0" text="delete">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-delete-file-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="clearbtn" layoutX="10.0" layoutY="86.0" onAction="#clearsFields" prefHeight="30.0" prefWidth="101.0" text="clear">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icons8-clear-symbol-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="18.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="printbtn" layoutX="10.0" layoutY="154.0" onAction="#printSlip" prefHeight="30.0" prefWidth="101.0" text="Print">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/print.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="saleTable" layoutX="-6.0" layoutY="321.0" onMouseClicked="#loadDataIntoField" prefHeight="243.0" prefWidth="1043.0" style="-fx-border-color: #1aa3ff;" stylesheets="@tableStyle.css">
+                    <columns>
+                      <TableColumn fx:id="salePrimary" minWidth="0.0" prefWidth="0.0" text="salePrimary" />
+                      <TableColumn fx:id="tbCustomerName" prefWidth="112.0" text="Customer Name" />
+                        <TableColumn fx:id="tbCustomerCNIC" prefWidth="97.0" text="CNIC No" />
+                        <TableColumn fx:id="tbTotalWeight" prefWidth="108.0" text="Total Weight" />
+                        <TableColumn fx:id="tbRatePerKG" prefWidth="114.0" text="Rate/KG" />
+                        <TableColumn fx:id="tbTotalAmount" prefWidth="127.0" text="Total Amount" />
+                        <TableColumn fx:id="tbTotalChickens" prefWidth="141.0" text="Total Chickens" />
+                        <TableColumn fx:id="tbBatchNo" prefWidth="133.0" text="Batch No" />
+                        <TableColumn fx:id="tbAccount" prefWidth="109.0" text="Account" />
+                        <TableColumn fx:id="tbDate" prefWidth="100.0" text="sale Date" />
+                        <TableColumn fx:id="accountPrimary" minWidth="0.0" prefWidth="0.0" text="accountPrimary" />
+                        <TableColumn fx:id="customerPrimary" minWidth="0.0" prefWidth="0.0" text="customerPrimary" />
+                        <TableColumn fx:id="purchaseBatchPrimary" minWidth="0.0" prefWidth="0.0" text="purchaseBatchPrimary" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="431.0" layoutY="304.0" onMouseClicked="#printAllRecords" prefHeight="17.0" prefWidth="67.0" text="Print" textFill="#2304bf" underline="true" />
+                  <Pane layoutX="26.0" layoutY="20.0" prefHeight="275.0" prefWidth="780.0" style="-fx-border-color: #1aa3ff;">
+                     <children>
+                        <JFXDatePicker fx:id="txfDate" layoutX="57.0" layoutY="35.0" prefHeight="28.0" prefWidth="224.0" promptText="Sale Date" />
+                        <JFXTextField fx:id="txfTotalChickens" labelFloat="true" layoutX="317.0" layoutY="37.0" prefHeight="25.0" prefWidth="190.0" promptText="Total Number of Chickens" />
+                        <JFXTextField fx:id="txfTotalWeight" labelFloat="true" layoutX="57.0" layoutY="91.0" prefWidth="190.0" promptText="Total Weight" />
+                        <JFXTextField fx:id="txfRatePerKG" labelFloat="true" layoutX="57.0" layoutY="146.0" prefWidth="190.0" promptText="Rate/KG" />
+                        <JFXTextField fx:id="txfTotalAmount" labelFloat="true" layoutX="57.0" layoutY="202.0" prefHeight="24.0" prefWidth="190.0" promptText="Total Amount" />
+                        <JFXTextField fx:id="txfBatchNo" labelFloat="true" layoutX="317.0" layoutY="91.0" prefWidth="190.0" promptText="Chicken Batch Number" />
+                        <JFXTextField fx:id="txfTotaChickensBatch" labelFloat="true" layoutX="317.0" layoutY="146.0" prefWidth="190.0" promptText="Total Chickens in Batch" />
+                        <JFXTextField fx:id="txfCustomerCNIC" labelFloat="true" layoutX="317.0" layoutY="202.0" prefWidth="190.0" promptText="Customer CNIC " />
+                        <JFXTextField fx:id="txfCustomerName" labelFloat="true" layoutX="562.0" layoutY="37.0" prefWidth="190.0" promptText="Customer Name" />
+                        <JFXTextField fx:id="txfCustomerAccountNo" labelFloat="true" layoutX="562.0" layoutY="91.0" prefWidth="190.0" promptText="Customer Account No" />
+                        <JFXTextField fx:id="txfAccountCurrentBalance" labelFloat="true" layoutX="562.0" layoutY="146.0" prefWidth="190.0" promptText="Account Current Balance" />
+                        <ImageView fx:id="dateImage" fitHeight="14.0" fitWidth="14.0" layoutX="233.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="weightImage" fitHeight="14.0" fitWidth="14.0" layoutX="240.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="rateImage" fitHeight="14.0" fitWidth="14.0" layoutX="240.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="amountImage" fitHeight="14.0" fitWidth="14.0" layoutX="240.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="customerCNICImage" fitHeight="14.0" fitWidth="14.0" layoutX="500.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="batchChickenImage" fitHeight="14.0" fitWidth="14.0" layoutX="500.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="batchNoImage" fitHeight="14.0" fitWidth="14.0" layoutX="500.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="totalNumberChickenImage" fitHeight="14.0" fitWidth="14.0" layoutX="500.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="customerNameImage" fitHeight="14.0" fitWidth="14.0" layoutX="738.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="accountImage" fitHeight="14.0" fitWidth="14.0" layoutX="745.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="balanceImage" fitHeight="14.0" fitWidth="14.0" layoutX="745.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
+                        <JFXTextField fx:id="txfcustomerPrimary" layoutX="50.0" layoutY="2.0" promptText="customerPrimary" />
+                        <JFXTextField fx:id="txfaccountPrimay" layoutX="250.0" layoutY="2.0" promptText="accountPrimay" />
+                        <JFXTextField fx:id="txfpurchaseBatchPrimay" layoutX="433.0" layoutY="2.0" promptText="purchaseBatchPrimary" />
+                        <JFXTextField fx:id="txfSalePrimary" layoutX="575.0" layoutY="2.0" promptText="salePrimary" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

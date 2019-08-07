@@ -1,0 +1,13 @@
+
+
+.backgroungColor{
+    
+    
+    -fx-background-color: #cccccc;
+}
+.mouseOver:hover{
+    
+    -fx-background-color: #0066cc;
+    
+}
+

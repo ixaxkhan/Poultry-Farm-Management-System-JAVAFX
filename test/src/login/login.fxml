@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
+   <top>
+      <Pane prefHeight="38.0" prefWidth="838.0" style="-fx-background-color: #ac3939; -fx-border-radius: 15; -fx-border-color: red;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="424.0" opacity="0.88" prefHeight="39.0" prefWidth="416.0" style="-fx-background-color: white; -fx-border-color: red;">
+               <children>
+                  <Button layoutX="370.0" layoutY="1.0" mnemonicParsing="false" onAction="#windowClose" prefHeight="33.0" prefWidth="41.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></Pane>
+            <Text layoutX="77.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Login" wrappingWidth="139.13671875">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <Pane prefHeight="310.0" prefWidth="94.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <Pane prefHeight="7.0" prefWidth="838.0" style="-fx-background-color: #ac3939;" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <TabPane prefHeight="310.0" prefWidth="505.0" style="-fx-border-color: red;" styleClass="tabpane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab id="mouse" style="-fx-font-size: 16; -fx-background-color: #ac3939; -fx-color: red; -fx-border-radius: 15;" text="Super Admin">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="281.0" prefWidth="470.0" style="-fx-border-color: red;">
+                     <children>
+                        <JFXTextField fx:id="superUserName" alignment="BOTTOM_CENTER" focusColor="#405aa8" layoutX="202.0" layoutY="197.0" prefHeight="33.0" prefWidth="291.0" promptText=" User Name" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="164.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="superPassword" alignment="BOTTOM_CENTER" layoutX="200.0" layoutY="273.0" prefHeight="33.0" prefWidth="290.0" promptText="Password" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="163.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font></JFXPasswordField>
+                        <ImageView fitHeight="95.0" fitWidth="102.0" layoutX="293.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/admin-with-cogwheels.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="285.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Super Admin" textAlignment="CENTER" wrappingWidth="92.13671875" />
+                        <JFXButton layoutX="234.0" layoutY="351.0" onAction="#superLogin" prefHeight="59.0" prefWidth="88.0" text=" ">
+                           <graphic>
+                              <ImageView fitHeight="59.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/refresh.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton layoutX="366.0" layoutY="351.0" onAction="#clear" prefHeight="59.0" prefWidth="88.0" text=" ">
+                           <graphic>
+                              <ImageView fitHeight="59.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/delete.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab id="mouse" style="-fx-font-size: 16; -fx-background-color: #ac3939; -fx-color: red; -fx-border-radius: 15;" text="Admin">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="281.0" prefWidth="470.0" style="-fx-border-color: red;">
+                     <children>
+                        <JFXTextField fx:id="adminUserName" alignment="BOTTOM_CENTER" focusColor="#405aa8" layoutX="202.0" layoutY="197.0" prefHeight="33.0" prefWidth="291.0" promptText=" User Name" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="164.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="adminPassword" alignment="BOTTOM_CENTER" layoutX="200.0" layoutY="273.0" prefHeight="33.0" prefWidth="290.0" promptText="Password" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="163.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <ImageView fitHeight="95.0" fitWidth="102.0" layoutX="293.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/admin-with-cogwheels.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="285.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Admin" textAlignment="CENTER" wrappingWidth="92.13671875" />
+                        <JFXButton layoutX="234.0" layoutY="351.0" onAction="#adminLogin" prefHeight="59.0" prefWidth="88.0" text=" ">
+                           <graphic>
+                              <ImageView fitHeight="59.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/refresh.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton layoutX="366.0" layoutY="351.0" onAction="#clear" prefHeight="59.0" prefWidth="88.0" text=" ">
+                           <graphic>
+                              <ImageView fitHeight="59.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/delete.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="20.0" />
+         </BorderPane.margin>
+      </TabPane>
+   </center>
+   <right>
+      <Pane prefHeight="527.0" prefWidth="89.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
